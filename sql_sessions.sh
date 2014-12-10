@@ -15,6 +15,8 @@
 # VALUES
 # ('sqlserver', 'jonnywin', null, null, null, 'os_test', 'os_password');
 #
+# Note: you can also use the Web UI to create this connection.
+#
 # --get the ID you just inserted
 # SELECT id 
 # FROM os.ext_connection 
