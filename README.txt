@@ -3,7 +3,7 @@ README file for Scripts
 Site: http://www.PivotalGuru.com
 Author: Jon Roberts
 Email: jgronline@gmail.com
-Date: 2014-11-07
+Date: 2014-12-10
 ****************************************************************************************
 
 Scripts for maintaining Greenplum Database and HAWQ.
