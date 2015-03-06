@@ -24,7 +24,7 @@ echo "**                                                                        
 echo "*******************************************************************************************"
 t=`date`
 echo "Start: $t"
-psql -t -A -c "SET search_path=$search_path; SELECT 'VACUUM ANALYZE \"' || n.nspname || '\".\"' || c.relname || '\";' FROM pg_class c JOIN pg_namespace n ON c.relnamespace = n.oid WHERE n.nspname = 'pg_catalog' AND c.relkind = 'r' AND c.relstorage = 'h'" | psql -e
+psql -t -A -c "SET search_path=$search_path; SELECT 'VACUUM ANALYZE \"' || n.nspname || '\".\"' || c.relname || '\";' FROM pg_class c JOIN pg_namespace n ON c.relnamespace = n.oid WHERE n.nspname = 'pg_catalog' AND c.relkind = 'r' | psql -e
 t=`date`
 echo "Finish: $t"
 
