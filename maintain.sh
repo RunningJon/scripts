@@ -76,7 +76,7 @@ if [ "$v" == "gp" ]; then
 	t=`date`
 	echo "Start: $t"
 	vacuum_freeze_min_age=`psql -t -A -c "show vacuum_freeze_min_age;"`
-	psql -t -A -c "SET search_path=$search_path; SELECT 'VACUUM \"' || n.nspname || '\".\"' || c.relname || '\";' FROM pg_class c join pg_namespace n ON c.relnamespace = n.oid WHERE age(relfrozenxid) > $vacuum_freeze_min_age AND c.relkind = 'r' AND c.relstorage = 'h'" | psql -e
+	psql -t -A -c "SET search_path=$search_path; SELECT 'VACUUM \"' || n.nspname || '\".\"' || c.relname || '\";' FROM pg_class c join pg_namespace n ON c.relnamespace = n.oid WHERE age(relfrozenxid) > $vacuum_freeze_min_age AND c.relkind = 'r' | psql -e
 	t=`date`
 	echo "Finish: $t"
 
